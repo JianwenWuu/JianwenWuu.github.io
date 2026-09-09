@@ -1,0 +1,140 @@
+'use client';
+
+import Image from 'next/image';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { siteConfig } from '@/data/site';
+import { assetPath } from '@/lib/asset-path';
+
+const socialLinks = [
+  { label: 'Email', href: siteConfig.email ? `mailto:${siteConfig.email}` : '' },
+  { label: 'GitHub', href: siteConfig.github },
+  { label: 'Google Scholar', href: siteConfig.scholar },
+  { label: 'CV', href: siteConfig.cv },
+];
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export function Hero() {
+  return (
+    <section
+      id="top"
+      aria-labelledby="hero-heading"
+      className="site-container flex min-h-screen items-center pb-14 pt-28"
+    >
+      <motion.div
+        className="grid w-full items-end gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16"
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.12 }}
+      >
+        <div>
+          <motion.p
+            variants={item}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+            className="eyebrow mb-7 flex items-center gap-3 text-[#a3a3a3]"
+          >
+            <span className="inline-block size-2 bg-[#76b900]" />
+            {siteConfig.name}
+          </motion.p>
+
+          <motion.h1
+            id="hero-heading"
+            variants={item}
+            transition={{ duration: 0.65, ease: 'easeOut' }}
+            className="max-w-[12ch] text-[clamp(3rem,6.8vw,6.75rem)] font-medium leading-[0.92] tracking-[-0.065em]"
+          >
+            {siteConfig.headline.lead}{' '}
+            <span className="text-[#76b900]">
+              {siteConfig.headline.accent}
+            </span>{' '}
+            {siteConfig.headline.tail}
+          </motion.h1>
+
+          <motion.div
+            variants={item}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+            className="mt-10 grid gap-6 border-t border-white/15 pt-7 sm:grid-cols-2"
+          >
+            <p className="text-lg leading-relaxed text-white">
+              {siteConfig.title}
+              <br />
+              <span className="text-[#a3a3a3]">{siteConfig.institution}</span>
+            </p>
+            <p className="max-w-md leading-relaxed text-[#a3a3a3]">
+              {siteConfig.bio}
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={item}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+            className="mt-9 flex flex-wrap gap-x-6 gap-y-3"
+          >
+            {socialLinks.map((link) =>
+              link.href ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                  className="group inline-flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-[#76b900]"
+                >
+                  {link.label}
+                  <ArrowUpRight
+                    size={15}
+                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              ) : (
+                <span key={link.label} className="text-sm text-[#737373]">
+                  {link.label}
+                </span>
+              ),
+            )}
+          </motion.div>
+        </div>
+
+        <motion.div
+          variants={item}
+          transition={{ duration: 0.75, ease: 'easeOut' }}
+          className="relative aspect-[4/5] min-h-[26rem] overflow-hidden border border-white/15 bg-[#0d0d0d]"
+        >
+          {siteConfig.profileImage ? (
+            <Image
+              src={assetPath(siteConfig.profileImage)}
+              alt={`Portrait of ${siteConfig.name}`}
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover grayscale"
+            />
+          ) : (
+            <div
+              className="absolute inset-0"
+              role="img"
+              aria-label="Profile photo placeholder"
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#1d1d1d_1px,transparent_1px),linear-gradient(to_bottom,#1d1d1d_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
+              <div className="absolute inset-x-[12%] top-[12%] h-px bg-[#76b900]" />
+              <div className="absolute bottom-[12%] left-[12%] right-[12%] border-t border-white/20 pt-5">
+                <p className="eyebrow text-[#76b900]">Portrait / 01</p>
+                <p className="mt-2 max-w-[18rem] text-sm leading-relaxed text-[#737373]">
+                  Add your photo at public/images/profile.jpg, then update
+                  profileImage in data/site.ts.
+                </p>
+              </div>
+            </div>
+          )}
+
+          <div className="absolute right-0 top-0 grid size-14 place-items-center bg-[#76b900] text-black">
+            <ArrowDownRight size={22} aria-hidden="true" />
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}

@@ -9,11 +9,7 @@ export function Projects() {
       <div className="site-container">
         <Reveal>
           <div id="projects-title">
-            <SectionHeader
-              index="03 / 05"
-              title="Projects"
-              description="Selected explorations in efficient, multimodal, and generative intelligence."
-            />
+            <SectionHeader index="03 / 05" title="Projects" />
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {projects.map((project) => (

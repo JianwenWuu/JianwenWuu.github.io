@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import {
   ArrowDownRight,
-  Camera,
   Contact,
   GitBranch,
   GraduationCap,
@@ -22,7 +21,6 @@ const socialLinks = [
   { label: 'GitHub', href: siteConfig.github, icon: GitBranch },
   { label: 'Google Scholar', href: siteConfig.scholar, icon: GraduationCap },
   { label: 'LinkedIn', href: siteConfig.linkedin, icon: Contact },
-  { label: 'INS', href: siteConfig.instagram, icon: Camera },
 ];
 
 const item = {
@@ -34,7 +32,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      aria-labelledby="hero-heading"
+      aria-labelledby="hero-name"
       className="site-container flex min-h-screen items-center pb-14 pt-28"
     >
       <motion.div
@@ -44,27 +42,27 @@ export function Hero() {
         transition={{ staggerChildren: 0.12 }}
       >
         <div>
-          <motion.p
+          <motion.h1
+            id="hero-name"
             variants={item}
             transition={{ duration: 0.55, ease: 'easeOut' }}
-            className="eyebrow mb-7 flex items-center gap-3 text-[#a3a3a3]"
+            className="mb-7 whitespace-nowrap text-[clamp(2.75rem,4.8vw,5rem)] font-medium leading-none tracking-[-0.055em]"
           >
-            <span className="inline-block size-2 bg-[#76b900]" />
             {siteConfig.name}
-          </motion.p>
+          </motion.h1>
 
-          <motion.h1
+          <motion.h2
             id="hero-heading"
             variants={item}
             transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="max-w-[12ch] text-[clamp(3rem,6.8vw,6.75rem)] font-medium leading-[0.92] tracking-[-0.065em]"
+            className="max-w-[15ch] text-[clamp(2.6rem,5.2vw,5.25rem)] font-medium leading-[0.96] tracking-[-0.055em]"
           >
             {siteConfig.headline.lead}{' '}
             <span className="text-[#76b900]">
               {siteConfig.headline.accent}
             </span>{' '}
             {siteConfig.headline.tail}
-          </motion.h1>
+          </motion.h2>
 
           <motion.div
             variants={item}
@@ -84,7 +82,7 @@ export function Hero() {
           <motion.div
             variants={item}
             transition={{ duration: 0.55, ease: 'easeOut' }}
-            className="mt-9 grid max-w-2xl grid-cols-3 gap-3 sm:grid-cols-5"
+            className="mt-9 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4"
           >
             {socialLinks.map((link) => {
               const Icon = link.icon;
@@ -136,7 +134,7 @@ export function Hero() {
               fill
               priority
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover grayscale"
+              className="object-cover object-center"
             />
           ) : (
             <div

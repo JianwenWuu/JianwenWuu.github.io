@@ -46,19 +46,20 @@ function AlbumVisual({ item, expanded = false }: { item: AlbumItem; expanded?: b
 
 export function Album() {
   return (
-    <section id="album" aria-labelledby="album-title" className="section-pad">
+    <section id="moments" aria-labelledby="moments-title" className="section-pad">
       <div className="site-container">
         <Reveal>
-          <div id="album-title">
+          <div id="moments-title">
             <SectionHeader
               index="04 / 05"
-              title="Album"
-              description="Notes from research, travel, campus, and everyday life."
+              title="Moments"
             />
           </div>
           <div className="grid auto-rows-[14rem] gap-4 sm:auto-rows-[18rem] md:grid-cols-2 md:auto-rows-[16rem] lg:grid-cols-12">
             {album.map((item, index) => {
-              const layout = [
+              const layout = album.length === 1
+                ? 'md:col-span-2 md:row-span-2 lg:col-span-12'
+                : [
                 'md:row-span-2 lg:col-span-7',
                 'lg:col-span-5',
                 'lg:col-span-5',

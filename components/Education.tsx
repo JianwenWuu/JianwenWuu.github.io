@@ -31,9 +31,11 @@ export function Education() {
                       </p>
                     )}
                   </div>
-                  <p className="text-sm text-[#737373] md:text-right">
-                    {item.location}
-                  </p>
+                  <div className="space-y-2 text-sm text-[#737373] md:text-right">
+                    {item.location.map((location) => (
+                      <p key={location}>{location}</p>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}

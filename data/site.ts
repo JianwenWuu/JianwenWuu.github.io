@@ -5,27 +5,25 @@ export const siteConfig = {
   institution: 'Purdue University',
   headline: {
     lead: 'Building',
-    accent: 'Efficient',
-    tail: 'Multimodal Intelligence.',
+    accent: 'Efficient ML Systems',
+    tail: 'and Multimodal Intelligence.',
   },
   bio: 'I am interested in efficient AI systems, multimodal intelligence, and efficient generative models.',
   location: 'West Lafayette, IN',
-  email: 'wu2838@purdue.edu',
+  email: 'jianwenwu1227@gmail.com',
   github: 'https://github.com/JianwenWuu',
   // TODO: Add your Google Scholar URL.
   scholar: '',
   linkedin: 'https://www.linkedin.com/in/jianwen-wu-846032353/',
-  instagram: 'https://www.instagram.com/deoksptti/',
   // TODO: Add /public/cv.pdf when your CV is ready.
   cv: '',
-  // TODO: Replace with /images/profile.jpg after adding the real photo.
-  profileImage: '',
+  profileImage: '/images/profile.png',
 } as const;
 
 export const navigation = [
   { label: 'Education', href: '#education' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Album', href: '#album' },
+  { label: 'Moments', href: '#moments' },
   { label: 'News', href: '#news' },
 ] as const;

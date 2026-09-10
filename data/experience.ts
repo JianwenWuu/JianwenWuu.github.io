@@ -21,5 +21,21 @@ export const experience: ExperienceItem[] = [
     description:
       'Exploring efficient learning and generation across models, modalities, and computing systems.',
     tags: ['Efficient AI Systems', 'Multimodal AI', 'Generative Models'],
+    link: 'https://ecoai-group.github.io/',
+  },
+  {
+    organization: 'Hardware-Software Codesign Lab',
+    role: 'Visiting Undergraduate Research Intern',
+    startDate: '2025',
+    endDate: '2026',
+    location: 'South Bend, Indiana',
+    description:
+      'Research across efficient learning algorithms, specialized hardware, and neuro-symbolic systems.',
+    tags: [
+      'Efficient AI Systems',
+      'Algorithm-Hardware Codesign',
+      'Neuro-Symbolic Inference',
+    ],
+    link: 'https://codesignlab.nd.edu/',
   },
 ];

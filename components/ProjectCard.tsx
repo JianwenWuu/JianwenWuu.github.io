@@ -31,27 +31,33 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
       <div className="p-7 md:p-9">
         <div className="flex items-center justify-between gap-4">
           <p className="eyebrow text-[#76b900]">{project.subtitle}</p>
-          <p className="font-mono text-xs text-[#737373]">{project.year}</p>
+          {project.year && (
+            <p className="font-mono text-xs text-[#737373]">{project.year}</p>
+          )}
         </div>
         <div className="mt-7 flex items-start justify-between gap-5">
           <div>
             <h3 className="text-2xl font-medium tracking-[-0.035em] transition-colors group-hover:text-[#76b900] md:text-3xl">
               {project.title}
             </h3>
-            <p className="mt-4 max-w-lg leading-relaxed text-[#a3a3a3]">
-              {project.description}
-            </p>
+            {project.description && (
+              <p className="mt-4 max-w-lg leading-relaxed text-[#a3a3a3]">
+                {project.description}
+              </p>
+            )}
           </div>
           <ArrowUpRight
             className="shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#76b900]"
             aria-hidden="true"
           />
         </div>
-        <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#737373]">
-          {project.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        {project.tags.length > 0 && (
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#737373]">
+            {project.tags.map((tag) => (
+              <li key={tag}>{tag}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </article>
   );

@@ -12,26 +12,10 @@ export type AlbumItem = {
 export const album: AlbumItem[] = [
   {
     id: 'album-01',
-    alt: 'Personal photo placeholder',
-    caption: 'A moment worth keeping',
-    category: 'Life',
-  },
-  {
-    id: 'album-02',
-    alt: 'Research photo placeholder',
-    caption: 'Ideas in progress',
-    category: 'Research',
-  },
-  {
-    id: 'album-03',
-    alt: 'Travel photo placeholder',
-    caption: 'Somewhere new',
-    category: 'Travel',
-  },
-  {
-    id: 'album-04',
-    alt: 'Campus photo placeholder',
-    caption: 'Around campus',
-    category: 'Campus',
+    src: '/images/album/graduation.jpg',
+    alt: 'Jianwen Wu celebrating graduation from Nanjing University',
+    caption:
+      'I graduated from NJU! Having had great 3 years in Suzhou and 1 year in Gulou, Nanjing.',
+    category: 'Graduation',
   },
 ];

@@ -3,7 +3,7 @@ export type EducationItem = {
   degree: string;
   startYear: string;
   endYear: string;
-  location: string;
+  location: string[];
   description?: string;
   logo?: string;
 };
@@ -15,14 +15,14 @@ export const education: EducationItem[] = [
     degree: 'Ph.D. in Computer Science',
     startYear: '2026',
     endYear: 'Present',
-    location: 'West Lafayette, Indiana',
+    location: ['West Lafayette, Indiana'],
     description: 'Research focus: efficient and multimodal intelligence.',
   },
   {
     institution: 'Nanjing University',
-    degree: 'B.Eng. in Integrated Circuits',
+    degree: 'B.Eng. in Integrated Circuits and Integrated System',
     startYear: '2022',
     endYear: '2026',
-    location: 'Nanjing, China',
+    location: ['Nanjing, China', 'Suzhou, China (Suzhou campus)'],
   },
 ];

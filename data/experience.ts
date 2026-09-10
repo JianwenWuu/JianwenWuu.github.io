@@ -22,9 +22,10 @@ export const experience: ExperienceItem[] = [
       'Exploring efficient learning and generation across models, modalities, and computing systems.',
     tags: ['Efficient AI Systems', 'Multimodal AI', 'Generative Models'],
     link: 'https://ecoai-group.github.io/',
+    image: '/images/institutions/purdue.png',
   },
   {
-    organization: 'Hardware-Software Codesign Lab',
+    organization: 'Hardware-Software Codesign Lab · University of Notre Dame',
     role: 'Visiting Undergraduate Research Intern',
     startDate: '2025',
     endDate: '2026',
@@ -37,5 +38,6 @@ export const experience: ExperienceItem[] = [
       'Neuro-Symbolic Inference',
     ],
     link: 'https://codesignlab.nd.edu/',
+    image: '/images/institutions/notre-dame.svg',
   },
 ];

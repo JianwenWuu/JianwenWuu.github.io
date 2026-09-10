@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { experience } from '@/data/experience';
+import { assetPath } from '@/lib/asset-path';
 import { Reveal } from './Reveal';
 import { SectionHeader } from './SectionHeader';
 
@@ -40,10 +42,23 @@ export function Experience() {
                     </ul>
                   )}
                 </div>
-                <ArrowUpRight
-                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#76b900]"
-                  aria-hidden="true"
-                />
+                <div className="flex items-center justify-between gap-6 md:h-full md:flex-col md:items-end">
+                  {item.image && (
+                    <div className="grid size-16 shrink-0 place-items-center border border-white/15 bg-white p-2">
+                      <Image
+                        src={assetPath(item.image)}
+                        alt={`${item.organization} logo`}
+                        width={56}
+                        height={56}
+                        className="size-full object-contain"
+                      />
+                    </div>
+                  )}
+                  <ArrowUpRight
+                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#76b900]"
+                    aria-hidden="true"
+                  />
+                </div>
               </>
             );
 

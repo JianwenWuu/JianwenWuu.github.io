@@ -36,12 +36,12 @@ export function Hero() {
       className="site-container flex min-h-screen items-center pb-14 pt-28"
     >
       <motion.div
-        className="grid w-full items-end gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16"
+        className="grid w-full items-end gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16"
         initial="hidden"
         animate="visible"
         transition={{ staggerChildren: 0.12 }}
       >
-        <div>
+        <div className="lg:order-2">
           <motion.h1
             id="hero-heading"
             variants={item}
@@ -116,7 +116,7 @@ export function Hero() {
         <motion.div
           variants={item}
           transition={{ duration: 0.75, ease: 'easeOut' }}
-          className="w-full max-w-[20rem] justify-self-center lg:max-w-[22rem] lg:justify-self-end"
+          className="w-full max-w-[20rem] justify-self-center lg:order-1 lg:max-w-[22rem] lg:justify-self-start"
         >
           <div className="relative aspect-[3/4] overflow-hidden border border-white/15 bg-[#0d0d0d]">
             {siteConfig.profileImage ? (

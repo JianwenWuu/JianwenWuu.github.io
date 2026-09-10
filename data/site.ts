@@ -10,14 +10,12 @@ export const siteConfig = {
   },
   bio: 'I am interested in efficient AI systems, multimodal intelligence, and efficient generative models.',
   location: 'West Lafayette, IN',
-  // TODO: Add your email address.
-  email: '',
-  // TODO: Add your GitHub URL.
-  github: '',
+  email: 'wu2838@purdue.edu',
+  github: 'https://github.com/JianwenWuu',
   // TODO: Add your Google Scholar URL.
   scholar: '',
-  // TODO: Add your LinkedIn URL.
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/jianwen-wu-846032353/',
+  instagram: 'https://www.instagram.com/deoksptti/',
   // TODO: Add /public/cv.pdf when your CV is ready.
   cv: '',
   // TODO: Replace with /images/profile.jpg after adding the real photo.

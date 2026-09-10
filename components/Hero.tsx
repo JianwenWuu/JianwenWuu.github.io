@@ -1,16 +1,28 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import {
+  ArrowDownRight,
+  Camera,
+  Contact,
+  GitBranch,
+  GraduationCap,
+  Mail,
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/data/site';
 import { assetPath } from '@/lib/asset-path';
 
 const socialLinks = [
-  { label: 'Email', href: siteConfig.email ? `mailto:${siteConfig.email}` : '' },
-  { label: 'GitHub', href: siteConfig.github },
-  { label: 'Google Scholar', href: siteConfig.scholar },
-  { label: 'CV', href: siteConfig.cv },
+  {
+    label: 'Email',
+    href: siteConfig.email ? `mailto:${siteConfig.email}` : '',
+    icon: Mail,
+  },
+  { label: 'GitHub', href: siteConfig.github, icon: GitBranch },
+  { label: 'Google Scholar', href: siteConfig.scholar, icon: GraduationCap },
+  { label: 'LinkedIn', href: siteConfig.linkedin, icon: Contact },
+  { label: 'INS', href: siteConfig.instagram, icon: Camera },
 ];
 
 const item = {
@@ -72,29 +84,43 @@ export function Hero() {
           <motion.div
             variants={item}
             transition={{ duration: 0.55, ease: 'easeOut' }}
-            className="mt-9 flex flex-wrap gap-x-6 gap-y-3"
+            className="mt-9 grid max-w-2xl grid-cols-3 gap-3 sm:grid-cols-5"
           >
-            {socialLinks.map((link) =>
-              link.href ? (
+            {socialLinks.map((link) => {
+              const Icon = link.icon;
+
+              return link.href ? (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.href.startsWith('http') ? '_blank' : undefined}
                   rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="group inline-flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-[#76b900]"
+                  aria-label={
+                    link.label === 'Email'
+                      ? `Email ${siteConfig.email}`
+                      : `Open ${link.label}`
+                  }
+                  className="group flex min-h-24 flex-col items-center justify-between border border-white/15 px-2 py-3 text-center transition-colors hover:border-[#76b900] hover:bg-[#76b900] hover:text-black"
                 >
-                  {link.label}
-                  <ArrowUpRight
-                    size={15}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
+                  <span className="font-mono text-xs uppercase tracking-[0.08em] text-[#a3a3a3] transition-colors group-hover:text-black">
+                    {link.label}
+                  </span>
+                  <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
                 </a>
               ) : (
-                <span key={link.label} className="text-sm text-[#737373]">
-                  {link.label}
+                <span
+                  key={link.label}
+                  className="flex min-h-24 cursor-not-allowed flex-col items-center justify-between border border-white/10 px-2 py-3 text-center text-[#494949]"
+                  aria-label={`${link.label} link not added yet`}
+                  aria-disabled="true"
+                >
+                  <span className="font-mono text-xs uppercase tracking-[0.08em]">
+                    {link.label}
+                  </span>
+                  <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
                 </span>
-              ),
-            )}
+              );
+            })}
           </motion.div>
         </div>
 

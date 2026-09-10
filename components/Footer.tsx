@@ -6,6 +6,7 @@ const links = [
   { label: 'GitHub', href: siteConfig.github },
   { label: 'Google Scholar', href: siteConfig.scholar },
   { label: 'LinkedIn', href: siteConfig.linkedin },
+  { label: 'Instagram', href: siteConfig.instagram },
 ];
 
 export function Footer() {

@@ -17,7 +17,7 @@ export const siteConfig = {
   linkedin: 'https://www.linkedin.com/in/jianwen-wu-846032353/',
   // TODO: Add /public/cv.pdf when your CV is ready.
   cv: '',
-  profileImage: '/images/profile.png',
+  profileImage: '/images/profile.jpg',
 } as const;
 
 export const navigation = [

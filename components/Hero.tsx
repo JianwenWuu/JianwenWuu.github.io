@@ -32,7 +32,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      aria-labelledby="hero-name"
+      aria-labelledby="hero-heading"
       className="site-container flex min-h-screen items-center pb-14 pt-28"
     >
       <motion.div
@@ -43,15 +43,6 @@ export function Hero() {
       >
         <div>
           <motion.h1
-            id="hero-name"
-            variants={item}
-            transition={{ duration: 0.55, ease: 'easeOut' }}
-            className="mb-7 whitespace-nowrap text-[clamp(2.75rem,4.8vw,5rem)] font-medium leading-none tracking-[-0.055em]"
-          >
-            {siteConfig.name}
-          </motion.h1>
-
-          <motion.h2
             id="hero-heading"
             variants={item}
             transition={{ duration: 0.65, ease: 'easeOut' }}
@@ -62,7 +53,7 @@ export function Hero() {
               {siteConfig.headline.accent}
             </span>{' '}
             {siteConfig.headline.tail}
-          </motion.h2>
+          </motion.h1>
 
           <motion.div
             variants={item}
@@ -125,38 +116,44 @@ export function Hero() {
         <motion.div
           variants={item}
           transition={{ duration: 0.75, ease: 'easeOut' }}
-          className="relative aspect-[4/5] min-h-[26rem] overflow-hidden border border-white/15 bg-[#0d0d0d]"
+          className="w-full max-w-[20rem] justify-self-center lg:max-w-[22rem] lg:justify-self-end"
         >
-          {siteConfig.profileImage ? (
-            <Image
-              src={assetPath(siteConfig.profileImage)}
-              alt={`Portrait of ${siteConfig.name}`}
-              fill
-              priority
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover object-center"
-            />
-          ) : (
-            <div
-              className="absolute inset-0"
-              role="img"
-              aria-label="Profile photo placeholder"
-            >
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#1d1d1d_1px,transparent_1px),linear-gradient(to_bottom,#1d1d1d_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
-              <div className="absolute inset-x-[12%] top-[12%] h-px bg-[#76b900]" />
-              <div className="absolute bottom-[12%] left-[12%] right-[12%] border-t border-white/20 pt-5">
-                <p className="eyebrow text-[#76b900]">Portrait / 01</p>
-                <p className="mt-2 max-w-[18rem] text-sm leading-relaxed text-[#737373]">
-                  Add your photo at public/images/profile.jpg, then update
-                  profileImage in data/site.ts.
-                </p>
+          <div className="relative aspect-[3/4] overflow-hidden border border-white/15 bg-[#0d0d0d]">
+            {siteConfig.profileImage ? (
+              <Image
+                src={assetPath(siteConfig.profileImage)}
+                alt={`Portrait of ${siteConfig.name}`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 22rem, 20rem"
+                className="object-cover object-center"
+              />
+            ) : (
+              <div
+                className="absolute inset-0"
+                role="img"
+                aria-label="Profile photo placeholder"
+              >
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1d1d1d_1px,transparent_1px),linear-gradient(to_bottom,#1d1d1d_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
+                <div className="absolute inset-x-[12%] top-[12%] h-px bg-[#76b900]" />
+                <div className="absolute bottom-[12%] left-[12%] right-[12%] border-t border-white/20 pt-5">
+                  <p className="eyebrow text-[#76b900]">Portrait / 01</p>
+                  <p className="mt-2 max-w-[18rem] text-sm leading-relaxed text-[#737373]">
+                    Add your photo at public/images/profile.jpg, then update
+                    profileImage in data/site.ts.
+                  </p>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          <div className="absolute right-0 top-0 grid size-14 place-items-center bg-[#76b900] text-black">
-            <ArrowDownRight size={22} aria-hidden="true" />
+            <div className="absolute right-0 top-0 grid size-14 place-items-center bg-[#76b900] text-black">
+              <ArrowDownRight size={22} aria-hidden="true" />
+            </div>
           </div>
+
+          <p className="mt-5 whitespace-nowrap text-[clamp(2.75rem,4.8vw,4.5rem)] font-medium leading-none tracking-[-0.055em]">
+            {siteConfig.name}
+          </p>
         </motion.div>
       </motion.div>
     </section>

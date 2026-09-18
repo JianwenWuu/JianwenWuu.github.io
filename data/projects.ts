@@ -4,6 +4,7 @@ export type ProjectItem = {
   authors?: string;
   description?: string;
   image?: string;
+  imageContain?: boolean;
   tags: string[];
   year: string;
   paperUrl?: string;
@@ -21,6 +22,8 @@ export const projects: ProjectItem[] = [
       'Lixuan Wei, Wei Zhou, Jianwen Wu, Yipeng Shen, Meiling Wang, and Haoran You',
     description:
       'A plug-in decoding framework for diffusion LLMs that learns variable-length blocks and position-aware parallel sampling, achieving up to 18.76× higher throughput than vanilla decoding with comparable accuracy.',
+    image: '/images/projects/early-bird-figure-1.png',
+    imageContain: true,
     tags: ['Diffusion LLMs', 'Efficient Inference', 'Parallel Decoding'],
     year: '2026',
     paperUrl: 'https://arxiv.org/abs/2609.16450',

@@ -8,14 +8,22 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
 
   const card = (
     <article className="group h-full border border-white/15 bg-[#0d0d0d] transition-colors hover:bg-[#151515]">
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/15 bg-[#111]">
+      <div
+        className={`relative overflow-hidden border-b border-white/15 bg-[#111] ${
+          project.imageContain ? 'aspect-[16/7]' : 'aspect-[16/10]'
+        }`}
+      >
         {project.image ? (
           <Image
             src={assetPath(project.image)}
             alt={`Preview of ${project.title}`}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className={`transition-transform duration-500 group-hover:scale-[1.02] ${
+              project.imageContain
+                ? 'bg-white object-contain p-3 sm:p-5'
+                : 'object-cover'
+            }`}
           />
         ) : (
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -67,11 +75,15 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
     </article>
   );
 
-  return href ? (
-    <a href={href} target="_blank" rel="noreferrer" className="block h-full">
-      {card}
-    </a>
-  ) : (
-    card
+  return (
+    <div className={`h-full ${project.featured ? 'md:col-span-2' : ''}`}>
+      {href ? (
+        <a href={href} target="_blank" rel="noreferrer" className="block h-full">
+          {card}
+        </a>
+      ) : (
+        card
+      )}
+    </div>
   );
 }

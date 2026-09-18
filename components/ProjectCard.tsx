@@ -22,7 +22,7 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
             <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,transparent_49.8%,#242424_50%,transparent_50.2%,transparent_100%)]" />
             <div className="absolute -bottom-[55%] -right-[5%] aspect-square w-[72%] rounded-full border border-white/15 transition-transform duration-500 group-hover:scale-105" />
             <div className="absolute left-7 top-7 font-mono text-xs tracking-[0.16em] text-[#737373]">
-              RESEARCH / PLACEHOLDER
+              {project.paperUrl ? 'RESEARCH / PAPER' : 'RESEARCH / PLACEHOLDER'}
             </div>
             <div className="absolute bottom-7 left-7 h-1 w-20 bg-[#76b900]" />
           </div>
@@ -40,8 +40,13 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
             <h3 className="text-2xl font-medium tracking-[-0.035em] transition-colors group-hover:text-[#76b900] md:text-3xl">
               {project.title}
             </h3>
+            {project.authors && (
+              <p className="mt-4 leading-relaxed text-white/80">
+                {project.authors}
+              </p>
+            )}
             {project.description && (
-              <p className="mt-4 max-w-lg leading-relaxed text-[#a3a3a3]">
+              <p className="mt-5 max-w-lg leading-relaxed text-[#a3a3a3]">
                 {project.description}
               </p>
             )}

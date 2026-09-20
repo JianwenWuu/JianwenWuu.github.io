@@ -12,7 +12,7 @@ export type EducationItem = {
 export const education: EducationItem[] = [
   {
     institution: 'Purdue University',
-    degree: 'Ph.D. in Computer Science',
+    degree: 'Ph.D. Student in Computer Science',
     startYear: '2026',
     endYear: 'Present',
     location: ['West Lafayette, Indiana'],

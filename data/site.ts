@@ -8,7 +8,7 @@ export const siteConfig = {
     accent: 'Efficient ML Systems',
     tail: 'and Multimodal Intelligence.',
   },
-  bio: 'I am interested in efficient AI systems, multimodal intelligence, and efficient generative models.',
+  bio: 'I am interested in algorithm-hardware co-design for efficient generative models, multimodal models, and world models.',
   location: 'West Lafayette, IN',
   email: 'jianwenwu1227@gmail.com',
   github: 'https://github.com/JianwenWuu',

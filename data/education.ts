@@ -16,7 +16,8 @@ export const education: EducationItem[] = [
     startYear: '2026',
     endYear: 'Present',
     location: ['West Lafayette, Indiana'],
-    description: 'Research focus: efficient and multimodal intelligence.',
+    description:
+      'Research focus: Algorithm-hardware Co-design for Efficient Generative Models and World Models.',
   },
   {
     institution: 'Nanjing University',

@@ -26,9 +26,14 @@ export function Experience() {
                 </div>
                 <div>
                   <p className="eyebrow text-[#76b900]">{item.role}</p>
-                  <h3 className="mt-4 text-3xl font-medium tracking-[-0.04em] transition-colors group-hover:text-[#76b900] md:text-5xl">
+                  <h3 className="mt-4 text-2xl font-medium tracking-[-0.04em] transition-colors group-hover:text-[#76b900] md:text-4xl">
                     {item.organization}
                   </h3>
+                  {item.advisor && (
+                    <p className="mt-3 text-sm text-[#a3a3a3]">
+                      Advisor: {item.advisor}
+                    </p>
+                  )}
                   {item.description && (
                     <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#a3a3a3]">
                       {item.description}

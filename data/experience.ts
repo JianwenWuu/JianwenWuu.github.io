@@ -5,6 +5,7 @@ export type ExperienceItem = {
   endDate: string;
   location?: string;
   description?: string;
+  advisor?: string;
   tags?: string[];
   link?: string;
   image?: string;
@@ -20,7 +21,8 @@ export const experience: ExperienceItem[] = [
     location: 'West Lafayette, Indiana',
     description:
       'Exploring efficient learning and generation across models, modalities, and computing systems.',
-    tags: ['Efficient AI Systems', 'Multimodal AI', 'Generative Models'],
+    advisor: 'Haoran You',
+    tags: ['Efficient ML Systems', 'Multimodal AI', 'Generative Models'],
     link: 'https://ecoai-group.github.io/',
     image: '/images/institutions/purdue.png',
   },
@@ -32,8 +34,9 @@ export const experience: ExperienceItem[] = [
     location: 'South Bend, Indiana',
     description:
       'Research across efficient learning algorithms, specialized hardware, and neuro-symbolic systems.',
+    advisor: 'Sharon Hu',
     tags: [
-      'Efficient AI Systems',
+      'Efficient ML Systems',
       'Algorithm-Hardware Codesign',
       'Neuro-Symbolic Inference',
     ],

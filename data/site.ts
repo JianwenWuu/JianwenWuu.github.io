@@ -12,8 +12,7 @@ export const siteConfig = {
   location: 'West Lafayette, IN',
   email: 'jianwenwu1227@gmail.com',
   github: 'https://github.com/JianwenWuu',
-  // TODO: Add your Google Scholar URL.
-  scholar: '',
+  scholar: 'https://scholar.google.com/citations?user=HpsLxlQAAAAJ&hl=en',
   linkedin: 'https://www.linkedin.com/in/jianwen-wu-846032353/',
   // TODO: Add /public/cv.pdf when your CV is ready.
   cv: '',

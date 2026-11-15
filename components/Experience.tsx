@@ -1,96 +1,41 @@
-import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
 import { experience } from '@/data/experience';
-import { assetPath } from '@/lib/asset-path';
-import { Reveal } from './Reveal';
+import { RichText } from '@/lib/rich-text';
 import { SectionHeader } from './SectionHeader';
 
 export function Experience() {
   return (
-    <section id="experience" aria-labelledby="experience-title" className="section-pad">
-      <div className="site-container">
-        <Reveal>
-          <div id="experience-title">
-            <SectionHeader index="02 / 05" title="Experience" />
-          </div>
-          {experience.map((item) => {
-            const content = (
-              <>
-                <div className="flex flex-col justify-between gap-10">
-                  <p className="font-mono text-sm text-[#a3a3a3]">
-                    {item.startDate} — {item.endDate}
-                  </p>
-                  {item.location && (
-                    <p className="text-sm text-[#737373]">{item.location}</p>
-                  )}
-                </div>
-                <div>
-                  <p className="eyebrow text-[#76b900]">{item.role}</p>
-                  <h3 className="mt-4 text-2xl font-medium tracking-[-0.04em] transition-colors group-hover:text-[#76b900] md:text-4xl">
-                    {item.organization}
-                  </h3>
-                  {item.advisor && (
-                    <p className="mt-3 text-sm text-[#a3a3a3]">
-                      Advisor: {item.advisor}
-                    </p>
-                  )}
-                  {item.description && (
-                    <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#a3a3a3]">
-                      {item.description}
-                    </p>
-                  )}
-                  {item.tags && (
-                    <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#737373]">
-                      {item.tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-                <div className="flex items-center justify-between gap-6 md:h-full md:flex-col md:items-end">
-                  {item.image && (
-                    <div className="grid size-16 shrink-0 place-items-center border border-white/15 bg-white p-2">
-                      <Image
-                        src={assetPath(item.image)}
-                        alt={`${item.organization} logo`}
-                        width={56}
-                        height={56}
-                        className="size-full object-contain"
-                      />
-                    </div>
-                  )}
-                  <ArrowUpRight
-                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#76b900]"
-                    aria-hidden="true"
-                  />
-                </div>
-              </>
-            );
-
-            const className =
-              'group grid gap-8 border-y border-white/15 bg-[#0d0d0d] p-7 transition-colors hover:bg-[#151515] md:grid-cols-[0.65fr_2fr_auto] md:p-10';
-
-            return item.link ? (
-              <a
-                key={`${item.organization}-${item.startDate}`}
-                href={item.link}
-                target="_blank"
-                rel="noreferrer"
-                className={className}
-              >
-                {content}
-              </a>
-            ) : (
-              <article
-                key={`${item.organization}-${item.startDate}`}
-                className={className}
-              >
-                {content}
-              </article>
-            );
-          })}
-        </Reveal>
-      </div>
+    <section id="experience" aria-labelledby="exp-title">
+      <SectionHeader id="exp-title" title="Experience" />
+      <ol className="entries">
+        {experience.map((item) => (
+          <li className="entry" key={`${item.organization}-${item.startDate}`}>
+            <p className="entry__top">
+              <span>
+                {item.startDate} – {item.endDate}
+              </span>
+              {item.location && <span>{item.location}</span>}
+            </p>
+            <h3 className="entry__where">
+              {item.link ? (
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  {item.organization}
+                </a>
+              ) : (
+                item.organization
+              )}
+            </h3>
+            <p className="entry__what">{item.role}</p>
+            {item.advisor && (
+              <p className="entry__meta">Advisor: {item.advisor}</p>
+            )}
+            {item.description && (
+              <p className="entry__desc">
+                <RichText text={item.description} />
+              </p>
+            )}
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

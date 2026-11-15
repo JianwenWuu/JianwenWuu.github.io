@@ -11,13 +11,17 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
-        <Education />
-        <Experience />
-        <Projects />
-        <Album />
         <News />
+        <Projects />
+        <div className="section">
+          <div className="wrap split">
+            <Education />
+            <Experience />
+          </div>
+        </div>
+        <Album />
       </main>
       <Footer />
     </>

@@ -3,27 +3,26 @@ export type EducationItem = {
   degree: string;
   startYear: string;
   endYear: string;
-  location: string[];
+  location: string;
+  /** Optional muted line, e.g. thesis or honors (rich text). */
   description?: string;
-  logo?: string;
+  link?: string;
 };
 
-// TODO: Replace these entries with your complete education history.
+// Newest first.
 export const education: EducationItem[] = [
   {
     institution: 'Purdue University',
-    degree: 'Ph.D. Student in Computer Science',
+    degree: 'Ph.D. in Computer Science',
     startYear: '2026',
     endYear: 'Present',
-    location: ['West Lafayette, Indiana'],
-    description:
-      'Research focus: Algorithm-hardware Co-design for Efficient Generative Models and World Models.',
+    location: 'West Lafayette, Indiana',
   },
   {
     institution: 'Nanjing University',
     degree: 'B.Eng. in Integrated Circuits and Integrated System',
     startYear: '2022',
     endYear: '2026',
-    location: ['Nanjing, China', 'Suzhou, China (Suzhou campus)'],
+    location: 'Suzhou & Nanjing, China',
   },
 ];

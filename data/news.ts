@@ -1,23 +1,30 @@
 export type NewsItem = {
+  /** Shown as written, e.g. 'Sep 2026'. */
   date: string;
+  /** Rich text: [link](url), **bold** and *italics* work here. */
   title: string;
+  /** Optional muted follow-up sentence. */
   description?: string;
-  link?: string;
 };
 
-// TODO: Keep newest updates first.
+// Newest first. The first item also appears in the thin bar at the top of the page.
 export const news: NewsItem[] = [
   {
-    date: 'SEP 2026',
+    date: 'Sep 2026',
     title: 'Joined Purdue University as a Computer Science Ph.D. student.',
     description: 'Beginning a new chapter in West Lafayette.',
   },
   {
-    date: 'AUG 2026',
+    date: 'Sep 2026',
+    title:
+      'Our paper [*Early-Bird Decoding*](https://arxiv.org/abs/2609.16450), on accelerating diffusion LLMs, is now on arXiv.',
+  },
+  {
+    date: 'Aug 2026',
     title: 'Started research at the EcoAI Lab.',
   },
   {
-    date: 'JUN 2026',
+    date: 'Jun 2026',
     title: 'Graduated from Nanjing University.',
   },
 ];

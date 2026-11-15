@@ -1,28 +1,45 @@
+// Text fields marked "rich" accept these inline shortcuts:
+//   [link text](https://example.com)   → a link
+//   **text**                           → bold
+//   *text*                             → italics
 export const siteConfig = {
   name: 'Jianwen Wu',
-  shortName: 'JW.',
-  title: 'Ph.D. Student in Computer Science',
+  title: 'Ph.D. Student',
   institution: 'Purdue University',
-  headline: {
-    lead: 'Building',
-    accent: 'Efficient ML Systems',
-    tail: 'and Multimodal Intelligence.',
-  },
-  bio: 'I am interested in algorithm-hardware co-design for efficient generative models, multimodal models, and world models.',
-  location: 'West Lafayette, IN',
+  department: 'Department of Computer Science',
+  location: 'West Lafayette, Indiana',
+  url: 'https://jianwenwuu.github.io',
+  description:
+    'Jianwen Wu is a first-year Ph.D. student in Computer Science at Purdue University, working on algorithm–hardware co-design for efficient generative models.',
+
+  // About section (rich). One string per paragraph.
+  bio: [
+    'I am a first-year Ph.D. student in Computer Science at **Purdue University**, advised by [**Prof. Haoran You**](https://www.haoranyou.com/) in the [**EcoAI Lab**](https://ecoai-group.github.io/). My research focuses on algorithm–hardware co-design for efficient generative models, world models, and multimodal models.',
+    'Before Purdue, I received my B.Eng. in Integrated Circuits and Integrated System from Nanjing University, and was a visiting undergraduate research intern at the [Hardware-Software Codesign Lab](https://codesignlab.nd.edu/), University of Notre Dame, working with [Prof. Sharon Hu](https://cse.nd.edu/faculty/xiaobo-sharon-hu/).',
+  ],
+  interests: [
+    'Efficient AI',
+    'Algorithm–Hardware Co-design',
+    'Generative Models',
+    'ML Systems',
+  ],
+
   email: 'jianwenwu1227@gmail.com',
   github: 'https://github.com/JianwenWuu',
   scholar: 'https://scholar.google.com/citations?user=HpsLxlQAAAAJ&hl=en',
   linkedin: 'https://www.linkedin.com/in/jianwen-wu-846032353/',
-  // TODO: Add /public/cv.pdf when your CV is ready.
+  // Add /public/cv.pdf, then set cv: '/cv.pdf' and a "CV" link appears.
   cv: '',
-  profileImage: '/images/profile.jpg',
+
+  // 4:5 portrait shown on the right of the About section.
+  profileImage: '/images/profile-portrait.jpg',
 } as const;
 
 export const navigation = [
+  { label: 'About', href: '#about' },
+  { label: 'News', href: '#news' },
+  { label: 'Publications', href: '#publications' },
   { label: 'Education', href: '#education' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Moments', href: '#moments' },
-  { label: 'News', href: '#news' },
 ] as const;

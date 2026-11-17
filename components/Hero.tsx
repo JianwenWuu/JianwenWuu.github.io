@@ -43,6 +43,11 @@ export function Hero() {
             </p>
           ))}
         </div>
+        {siteConfig.note && (
+          <p className="bio__note">
+            <RichText text={siteConfig.note} />
+          </p>
+        )}
       </div>
 
       <figure className="portrait print">

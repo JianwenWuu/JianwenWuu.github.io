@@ -326,6 +326,15 @@ main [id] {
 .bio p + p {
   margin-top: 0.9em;
 }
+.bio__note {
+  margin-top: 1.1em;
+  padding-left: 16px;
+  border-left: 2px solid var(--red);
+  color: var(--ink);
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
 
 /* Ruled lists: research interests (left) and contact links (right) */
 .ruled .label {

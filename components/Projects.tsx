@@ -56,17 +56,29 @@ export function Projects() {
 
           return (
             <article className="pub" key={project.title}>
-              {project.image && (
+              {(project.image || project.video) && (
                 <a
-                  className="pub__thumb"
+                  className={`pub__thumb${project.video ? ' pub__thumb--video' : ''}`}
                   href={href}
                   target="_blank"
                   rel="noreferrer"
                   tabIndex={-1}
                   aria-hidden="true"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={assetPath(project.image)} alt="" loading="lazy" />
+                  {project.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={assetPath(project.image)} alt="" loading="lazy" />
+                  )}
+                  {project.video && (
+                    <video
+                      src={assetPath(project.video)}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    />
+                  )}
                 </a>
               )}
               <div className="pub__body">

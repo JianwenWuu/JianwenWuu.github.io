@@ -474,6 +474,27 @@ main [id] {
   object-fit: contain;
   mix-blend-mode: multiply; /* white figure background melts into the panel */
 }
+/* Teaser videos fill the panel; the still image sits underneath */
+.pub__thumb--video {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: #111;
+}
+.pub__thumb--video img,
+.pub__thumb--video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: normal;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pub__thumb--video video {
+    display: none;
+  }
+}
 .pub__venue {
   font-family: var(--sans);
   font-size: 13px;

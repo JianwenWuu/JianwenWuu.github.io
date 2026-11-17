@@ -7,8 +7,10 @@ export type ProjectItem = {
   year: string;
   /** One- or two-sentence summary (optional). */
   description?: string;
-  /** Teaser figure, shown on a sand-colored panel. */
+  /** Teaser figure, shown on a sand-colored panel (also the still frame for a video). */
   image?: string;
+  /** Optional looping teaser video (mp4, muted); fills the panel. */
+  video?: string;
   paperUrl?: string;
   codeUrl?: string;
   projectUrl?: string;
@@ -37,7 +39,8 @@ export const projects: ProjectItem[] = [
     year: '2026',
     description:
       'A plug-in decoding framework for diffusion LLMs that learns variable-length blocks and position-aware parallel sampling, reaching up to 18.76× the throughput of vanilla decoding at comparable accuracy.',
-    image: '/images/projects/early-bird-figure-1.png',
+    image: '/images/projects/early-bird-demo.jpg',
+    video: '/video/early-bird-demo.mp4',
     paperUrl: 'https://arxiv.org/abs/2609.16450',
   },
 ];

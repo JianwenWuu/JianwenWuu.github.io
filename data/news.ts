@@ -10,6 +10,11 @@ export type NewsItem = {
 // Newest first. The first item also appears in the thin bar at the top of the page.
 export const news: NewsItem[] = [
   {
+    date: 'Nov 2026',
+    title:
+      'Our paper [*PoCoAttn*](https://arxiv.org/abs/2611.20307), on fast and high-fidelity video generation, is now on arXiv, with a [project page](https://ecoai-group.github.io/pocoattn/).',
+  },
+  {
     date: 'Sep 2026',
     title: 'Joined Purdue University as a Computer Science Ph.D. student.',
     description: 'Beginning a new chapter in West Lafayette.',

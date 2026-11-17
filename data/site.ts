@@ -17,8 +17,9 @@ export const siteConfig = {
     'I am a first-year Ph.D. student in Computer Science at **Purdue University**, advised by [**Prof. Haoran You**](https://www.haoranyou.com/) in the [**EcoAI Lab**](https://ecoai-group.github.io/). My research focuses on algorithm–hardware co-design for efficient generative models, world models, and multimodal models.',
     'Before Purdue, I received my B.Eng. in Integrated Circuits and Integrated System from Nanjing University, and was a visiting undergraduate research intern at the [Hardware-Software Codesign Lab](https://codesignlab.nd.edu/), University of Notre Dame, working with [Prof. Sharon Hu](https://cse.nd.edu/faculty/xiaobo-sharon-hu/).',
   ],
-  // Short invitation shown under the bio, set off by a thin red rule (rich).
-  note: 'I am open to collaborations and discussions on efficient algorithms and systems for world models and generative models, and I am looking for a research internship for Summer 2027. Feel free to email me at [wu2838@purdue.edu](mailto:wu2838@purdue.edu).',
+  // Short note under the bio: a small red heading, then the text (rich).
+  noteTitle: 'Seeking a Research Internship · Summer 2027',
+  note: 'I am looking for a research internship for Summer 2027, and I am open to collaborations and discussions on efficient algorithms and systems for world models and generative models. Feel free to email me at [wu2838@purdue.edu](mailto:wu2838@purdue.edu).',
   interests: [
     'Efficient AI',
     'Algorithm–Hardware Co-design',

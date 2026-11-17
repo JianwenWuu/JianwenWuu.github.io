@@ -335,6 +335,16 @@ main [id] {
   hyphens: auto;
   text-wrap: pretty;
 }
+.bio__note-title {
+  margin-bottom: 4px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--red);
+}
 
 /* Ruled lists: research interests (left) and contact links (right) */
 .ruled .label {

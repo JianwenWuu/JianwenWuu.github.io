@@ -44,9 +44,14 @@ export function Hero() {
           ))}
         </div>
         {siteConfig.note && (
-          <p className="bio__note">
-            <RichText text={siteConfig.note} />
-          </p>
+          <div className="bio__note">
+            {siteConfig.noteTitle && (
+              <p className="bio__note-title">{siteConfig.noteTitle}</p>
+            )}
+            <p>
+              <RichText text={siteConfig.note} />
+            </p>
+          </div>
         )}
       </div>
 

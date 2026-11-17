@@ -11,6 +11,10 @@ export type ProjectItem = {
   image?: string;
   /** Optional looping teaser video (mp4, muted); fills the panel. */
   video?: string;
+  /** Width / height of the video, e.g. '16 / 9'. */
+  videoAspect?: string;
+  /** Short result chips shown on the video, e.g. '4× Attn speedup'. */
+  highlights?: string[];
   paperUrl?: string;
   codeUrl?: string;
   projectUrl?: string;
@@ -26,7 +30,9 @@ export const projects: ProjectItem[] = [
     year: '2026',
     description:
       'Training-free sparse attention for video diffusion that handles positional attention offline and content attention online, improving PSNR by 1.9–5.0 dB over prior methods with up to 2.0× faster denoising.',
-    image: '/images/projects/pocoattn-figure-1.jpg',
+    image: '/images/projects/pocoattn-demo.jpg',
+    video: '/video/pocoattn-demo.mp4',
+    videoAspect: '636 / 366',
     paperUrl: 'https://arxiv.org/abs/2611.20307',
     projectUrl: 'https://ecoai-group.github.io/pocoattn/',
   },
@@ -41,6 +47,7 @@ export const projects: ProjectItem[] = [
       'A plug-in decoding framework for diffusion LLMs that learns variable-length blocks and position-aware parallel sampling, reaching up to 18.76× the throughput of vanilla decoding at comparable accuracy.',
     image: '/images/projects/early-bird-demo.jpg',
     video: '/video/early-bird-demo.mp4',
+    videoAspect: '1000 / 524',
     paperUrl: 'https://arxiv.org/abs/2609.16450',
   },
 ];

@@ -474,21 +474,49 @@ main [id] {
   object-fit: contain;
   mix-blend-mode: multiply; /* white figure background melts into the panel */
 }
-/* Teaser videos fill the panel; the still image sits underneath */
+/* Teaser videos: shown whole on a dark panel, still image underneath */
 .pub__thumb--video {
   position: relative;
   padding: 0;
   overflow: hidden;
   background: #111;
 }
-.pub__thumb--video img,
-.pub__thumb--video video {
+.pub__media {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+.pub__media img,
+.pub__media video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   mix-blend-mode: normal;
+}
+.pub__badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 10px 5px;
+  background: rgba(247, 245, 241, 0.94);
+  font-family: var(--sans);
+  font-size: 11.5px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.pub__badge b {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
 }
 @media (prefers-reduced-motion: reduce) {
   .pub__thumb--video video {

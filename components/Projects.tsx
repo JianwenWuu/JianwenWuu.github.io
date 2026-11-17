@@ -65,19 +65,49 @@ export function Projects() {
                   tabIndex={-1}
                   aria-hidden="true"
                 >
-                  {project.image && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={assetPath(project.image)} alt="" loading="lazy" />
-                  )}
-                  {project.video && (
-                    <video
-                      src={assetPath(project.video)}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    />
+                  {project.video ? (
+                    <span
+                      className="pub__media"
+                      style={{ aspectRatio: project.videoAspect }}
+                    >
+                      {project.image && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={assetPath(project.image)}
+                          alt=""
+                          loading="lazy"
+                        />
+                      )}
+                      <video
+                        src={assetPath(project.video)}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                      />
+                      {project.highlights && (
+                        <span className="pub__badge">
+                          {project.highlights.map((item) => {
+                            const [figure, ...words] = item.split(' ');
+                            return (
+                              <span key={item}>
+                                <b>{figure}</b> {words.join(' ')}
+                              </span>
+                            );
+                          })}
+                        </span>
+                      )}
+                    </span>
+                  ) : (
+                    project.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={assetPath(project.image)}
+                        alt=""
+                        loading="lazy"
+                      />
+                    )
                   )}
                 </a>
               )}

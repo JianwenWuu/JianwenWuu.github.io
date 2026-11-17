@@ -18,6 +18,18 @@ export type ProjectItem = {
 export const projects: ProjectItem[] = [
   {
     title:
+      'PoCoAttn: Position–Content Collaborative Sparse Attention for Fast and High-Fidelity Video Generation',
+    authors: 'Jianwen Wu, Meiling Wang, Junkang Zhou, Yipeng Shen, Haoran You',
+    venue: 'arXiv Preprint',
+    year: '2026',
+    description:
+      'Training-free sparse attention for video diffusion that handles positional attention offline and content attention online, improving PSNR by 1.9–5.0 dB over prior methods with up to 2.0× faster denoising.',
+    image: '/images/projects/pocoattn-figure-1.jpg',
+    paperUrl: 'https://arxiv.org/abs/2611.20307',
+    projectUrl: 'https://ecoai-group.github.io/pocoattn/',
+  },
+  {
+    title:
       'Early-Bird Decoding: Accelerating Diffusion LLMs with Learnable Block Sizes and Parallel Sampling',
     authors:
       'Lixuan Wei*, Wei Zhou*, Jianwen Wu, Yipeng Shen, Meiling Wang, Haoran You',

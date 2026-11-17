@@ -19,7 +19,7 @@ export const siteConfig = {
   ],
   // Short note under the bio: a small red heading, then the text (rich).
   noteTitle: 'Seeking a Research Internship · Summer 2027',
-  note: 'I am looking for a research internship for Summer 2027, and I am open to collaborations and discussions on efficient algorithms and systems for world models and generative models. Feel free to email me at [wu2838@purdue.edu](mailto:wu2838@purdue.edu).',
+  note: 'I am looking for a research internship for Summer 2027, and I am open to collaborations and discussions on efficient algorithms and systems/architectures for world models and generative models. Feel free to email me at [wu2838@purdue.edu](mailto:wu2838@purdue.edu).',
   interests: [
     'Efficient AI',
     'Algorithm–Hardware Co-design',
